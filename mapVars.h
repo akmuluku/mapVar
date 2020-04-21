@@ -1,10 +1,11 @@
 // playing with class inheritance
 // we want a system class to inherit variable things
-// g++ -o g baseVars.cpp -lcJSON
+// g++ -std=c++11 -o test baseVars.cpp -I/usr/local/lib -Wl,-rpath,/usr/local/lib -lcjson
+
 #ifndef __MAPVARS_H
 #define __MAPVARS_H
 
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <stddef.h>
 #include <unistd.h>
@@ -12,10 +13,9 @@
 #include <string>
 #include <string.h>
 #include <unordered_map>
-#include <cJSON.h>
+#include "cjson/cJSON.h"
 
 using namespace std;
-
 
 class Var {
   // TODO use template
@@ -124,7 +124,7 @@ public:
 
   void showVars() {
     char tmp[64];
-     std::cout << "mymap contains:\n";
+     cout << "mymap contains:\n";
      for ( auto it = myVars.begin(); it != myVars.end(); ++it ) {
        cout << " " << it->first << ":" << it->second->getVal(tmp,64) <<endl;
      }

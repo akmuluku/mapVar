@@ -1,20 +1,7 @@
 // playing with class inheritance
 // we want a system class to inherit variable things
-// g++ -o baseVars  baseVars.cpp -lcJSON
 
-
-#include <stdio.h>
-#include <stddef.h>
-#include <unistd.h>
-#include <iostream>
-#include <string>
-#include <string.h>
-#include <unordered_map>
-#include <cJSON.h>
 #include "mapVars.h"
-
-using namespace std;
-
 
 // Derived class
 class SomeSystem: public mapVars {
